@@ -6,7 +6,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.schema import HumanMessage, AIMessage
-
+from util_funs.chatgptpdf import make_chain
 
 def make_chain():
     model = ChatOpenAI(
