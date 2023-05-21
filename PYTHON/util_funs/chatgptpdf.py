@@ -117,9 +117,9 @@ def make_chain():
     embedding = OpenAIEmbeddings()
 
     vector_store = Chroma(
-        collection_name="april-2023-economic",
+        collection_name="forecasting_ccb",
         embedding_function=embedding,
-        persist_directory="src/data/chroma",
+        persist_directory=os.path.join(os.getcwd(), "data", "chroma")
     )
 
     return ConversationalRetrievalChain.from_llm(

@@ -1,33 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-from langchain.vectorstores.chroma import Chroma
-from langchain.chat_models import ChatOpenAI
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains import ConversationalRetrievalChain
 from langchain.schema import HumanMessage, AIMessage
 from util_funs.chatgptpdf import make_chain
-
-def make_chain():
-    model = ChatOpenAI(
-        model_name="gpt-3.5-turbo",
-        temperature="0",
-        # verbose=True
-    )
-    embedding = OpenAIEmbeddings()
-
-    vector_store = Chroma(
-        collection_name="forecasting_ccb",
-        embedding_function=embedding,
-        persist_directory=os.path.join(os.getcwd(), "data", "chroma")
-    )
-
-    return ConversationalRetrievalChain.from_llm(
-        model,
-        retriever=vector_store.as_retriever(),
-        return_source_documents=True,
-        # verbose=True,
-    )
 
 
 if __name__ == "__main__":

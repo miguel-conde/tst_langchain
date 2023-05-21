@@ -2,3 +2,7 @@ PYTHON/util_funs.egg-info
 .Rproj.user
 .venv
 *.Rproj
+*.parquet
+*.pkl
+*.pdf
+data/chroma/index
