@@ -1,11 +1,11 @@
-import util_funs.commons as commons
+import util_funs.globalsettings as gs
 
-print("DIR DATA: " + commons.the_folders.DIR_DATA)
-print("DIR DATA RAW: " + commons.the_folders.DIR_DATA_RAW)
-print("DIR DATA CLEAN: " + commons.the_folders.DIR_DATA_CLEAN)
-print("FILE PDF: " + commons.the_files.PROBE_PDF)
+print("DIR DATA: " + gs.the_folders.DIR_DATA)
+print("DIR DATA RAW: " + gs.the_folders.DIR_DATA_RAW)
+print("DIR DATA CLEAN: " + gs.the_folders.DIR_DATA_CLEAN)
+print("FILE PDF: " + gs.the_files.PROBE_PDF)
 
 
-print("DIR PERSIST: " + commons.the_folders.DIR_PERSIST)
+print("DIR PERSIST: " + gs.the_folders.DIR_PERSIST)
 
-print("COLLECTION: " + commons.the_constants.COLLECTION)
+print("COLLECTION: " + gs.the_constants.COLLECTION)

@@ -4,7 +4,7 @@
 import os
 from dotenv import load_dotenv
 
-import util_funs.commons as commons
+import util_funs.globalsettings as gs
 
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
@@ -19,7 +19,7 @@ if __name__ ==  '__main__':
 
 
     # Step 1 - Parse PDF
-    file_path = commons.the_files.PROBE_PDF
+    file_path = gs.the_files.PROBE_PDF
     
     raw_pages, metadata = parse_pdf(file_path)
 
@@ -41,8 +41,8 @@ if __name__ ==  '__main__':
     vector_store = Chroma.from_documents(
         document_chunks,
         embeddings,
-        collection_name=commons.the_constants.COLLECTION,
-        persist_directory=commons.the_folders.DIR_PERSIST
+        collection_name=gs.the_constants.COLLECTION,
+        persist_directory=gs.the_folders.DIR_PERSIST
     )
 
     # Save DB locally
