@@ -5,6 +5,8 @@ from typing import Callable, List, Tuple, Dict
 import PyPDF4
 import pdfplumber
 
+import util_funs.commons as commons
+
 from langchain.vectorstores.chroma import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -117,9 +119,9 @@ def make_chain():
     embedding = OpenAIEmbeddings()
 
     vector_store = Chroma(
-        collection_name="forecasting_ccb",
+        collection_name=commons.the_constants.COLLECTION,
         embedding_function=embedding,
-        persist_directory=os.path.join(os.getcwd(), "data", "chroma")
+        persist_directory=commons.the_folders.DIR_PERSIST
     )
 
     return ConversationalRetrievalChain.from_llm(

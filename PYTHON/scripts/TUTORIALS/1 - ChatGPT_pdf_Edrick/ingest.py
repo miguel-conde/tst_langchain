@@ -4,12 +4,14 @@
 import os
 from dotenv import load_dotenv
 
+import util_funs.commons as commons
+
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 
-from util_funs import parse_pdf
-from util_funs import clean_text, merge_hyphenated_words
-from util_funs import fix_newlines, remove_multiple_newlines, text_to_docs
+from util_funs.chatgptpdf import parse_pdf
+from util_funs.chatgptpdf import clean_text, merge_hyphenated_words
+from util_funs.chatgptpdf import fix_newlines, remove_multiple_newlines, text_to_docs
 
 
 if __name__ ==  '__main__':
@@ -17,7 +19,7 @@ if __name__ ==  '__main__':
 
 
     # Step 1 - Parse PDF
-    file_path = os.path.join(os.getcwd(), "data", "77009321.pdf")
+    file_path = commons.the_files.PROBE_PDF
     
     raw_pages, metadata = parse_pdf(file_path)
 
@@ -39,8 +41,8 @@ if __name__ ==  '__main__':
     vector_store = Chroma.from_documents(
         document_chunks,
         embeddings,
-        collection_name="forecasting_ccb",
-        persist_directory=os.path.join(os.getcwd(), "data", "chroma")
+        collection_name=commons.the_constants.COLLECTION,
+        persist_directory=commons.the_folders.DIR_PERSIST
     )
 
     # Save DB locally
