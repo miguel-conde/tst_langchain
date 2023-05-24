@@ -19,8 +19,9 @@ class prjSettings():
 
 the_folders = prjSettings()
 
-the_folders.dir_root  = os.path.abspath(os.path.dirname(__file__)) # Project root is defined by globalsettings.py location
-the_folders.DIR_DATA = os.path.join(os.getcwd(), "data")
+the_folders.DIR_ROOT  = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "..") # Project root is defined by globalsettings.py location
+# the_folders.DIR_ROOT  = os.path.join(os.getcwd()) 
+the_folders.DIR_DATA = os.path.join(the_folders.DIR_ROOT, "data")
 the_folders.DIR_DATA_RAW = os.path.join(the_folders.DIR_DATA, "raw")
 the_folders.DIR_DATA_CLEAN = os.path.join(the_folders.DIR_DATA, "clean")
 
@@ -30,7 +31,7 @@ the_files = prjSettings()
 
 the_files.PROBE_PDF = os.path.join(the_folders.DIR_DATA, "77009321.pdf")
 
-the_files.cfg_file = os.path.join(the_files.dir_root, "config.ini")
+the_files.CFG_FILE = os.path.join(the_folders.DIR_ROOT, "config.ini")
 
 ## CONSTANTS
 
@@ -44,9 +45,9 @@ prj_cfg = prjSettings()
 
 config = configparser.ConfigParser()
 
-config.read(the_files.cfg_file)
+config.read(the_files.CFG_FILE)
 
-prj_cfg.serveraliveinterval = config['DEFAULT']['Serveraliveinterval']
-prj_cfg.compression         = config['DEFAULT']['Compression']
-prj_cfg.compressionlevel    = config['DEFAULT']['Compressionlevel']
-prj_cfg.forwardx11          = config['DEFAULT']['Forwardx11']
+prj_cfg.serveraliveinterval = config['DEFAULT']['serveraliveinterval']
+prj_cfg.compression         = config['DEFAULT']['compression']
+prj_cfg.compressionlevel    = config['DEFAULT']['compressionlevel']
+prj_cfg.forwardx11          = config['DEFAULT']['forwardx11']
