@@ -1,6 +1,4 @@
 
-from dotenv import load_dotenv
-
 import util_funs.globalsettings as gs
 
 from langchain.vectorstores import Chroma
