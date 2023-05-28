@@ -6,3 +6,4 @@ PYTHON/util_funs.egg-info
 *.pkl
 *.pdf
 data/chroma/index
+.env

@@ -30,8 +30,12 @@ the_folders.DIR_PERSIST = os.path.join(the_folders.DIR_DATA, "chroma")
 the_files = prjSettings()
 
 the_files.PROBE_PDF = os.path.join(the_folders.DIR_DATA, "77009321.pdf")
+the_folders.DIR_PDF_FILES = os.path.join(the_folders.DIR_DATA, "pdf_files")
 
 the_files.CFG_FILE = os.path.join(the_folders.DIR_ROOT, "config.ini")
+
+the_files.BF_TRAIN = os.path.join(the_folders.DIR_DATA_RAW, "black_friday_train.csv")
+the_files.BF_TEST  = os.path.join(the_folders.DIR_DATA_RAW, "black_friday_test.csv")
 
 ## CONSTANTS
 
