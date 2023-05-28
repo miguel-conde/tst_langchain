@@ -7,3 +7,5 @@ PYTHON/util_funs.egg-info
 *.pdf
 data/chroma/index
 .env
+.Rhistory
+PYTHON/notebooks/TUTORIALS/index.faiss
