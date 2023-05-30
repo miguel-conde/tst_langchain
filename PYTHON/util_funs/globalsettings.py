@@ -29,6 +29,7 @@ the_folders.DIR_PERSIST = os.path.join(the_folders.DIR_DATA, "chroma")
 
 the_files = prjSettings()
 
+the_files.PROBE_CSV = os.path.join(the_folders.DIR_DATA_RAW, "titanic.csv")
 the_files.PROBE_PDF = os.path.join(the_folders.DIR_DATA, "77009321.pdf")
 the_folders.DIR_PDF_FILES = os.path.join(the_folders.DIR_DATA, "pdf_files")
 

@@ -47,7 +47,8 @@ if __name__ ==  '__main__':
         # Display answer
         print("\n\nSources:\n")
         for document in source:
-            # print(f"Page: {document.metadata['page_number']}")            # print(f"Text chunk: {document.page_content[:160]}...\n")
+            # print(f"Page: {document.metadata['page_number']}")
+            # print(f"Text chunk: {document.page_content[:160]}...\n")
             print(f"\nDocument: {document.page_content}\n")
             print(f"\Source: {document.metadata['source']}\n")
         print(f"\n\nAnswer\n: {answer}")

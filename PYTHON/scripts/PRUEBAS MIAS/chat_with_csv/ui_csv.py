@@ -5,6 +5,8 @@ import pandas as pd
 import json
 
 from util_funs.agent_csv import query_agent, create_agent, API_KEY
+from langchain.agents import create_csv_agent
+from langchain.llms import OpenAI
 
 
 def decode_response(response: str) -> dict:
@@ -63,17 +65,23 @@ data = st.file_uploader("Upload a CSV")
 query = st.text_area("Insert your query")
 
 if st.button("Submit Query", type="primary"):
-    # Create an agent from the CSV file.
-    agent = create_agent(data)
+    # # Create an agent from the CSV file.
+    # agent = create_agent(data)
 
-    # Query the agent.
-    response = query_agent(agent=agent, query=query)
-    print(response)
+    # # Query the agent.
+    # response = query_agent(agent=agent, query=query)
+    # print(response)
 
-    # Decode the response.
-    decoded_response = decode_response(response)
+    # # Decode the response.
+    # decoded_response = decode_response(response)
 
-    # Write the response to the Streamlit app.
-    write_response(decoded_response)
+    # # Write the response to the Streamlit app.
+    # write_response(decoded_response)
+
+    agent = create_csv_agent(OpenAI(temperature=0), data, verbose=True)
+
+    response = agent.run(query)
+
+    st.write(response)
 
 # streamlit run ui_csv.py
