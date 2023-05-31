@@ -17,7 +17,6 @@ from util_funs.chatgptpdf import fix_newlines, remove_multiple_newlines, text_to
 if __name__ ==  '__main__':
     _ = load_dotenv() 
 
-
     # Step 1 - Parse PDF
     file_path = gs.the_files.PROBE_PDF
     
