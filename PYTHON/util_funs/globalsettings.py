@@ -29,6 +29,7 @@ the_files.BF_TEST  = os.path.join(the_folders.DIR_DATA_RAW, "black_friday_test.c
 
 the_files.CSV_FILES = [os.path.join(the_folders.DIR_PDF_CSV_FILES, "tasa_paro_espanya_simplificado.csv"),
                        os.path.join(the_folders.DIR_PDF_CSV_FILES, "tasa_paro_mensual_por_pais_ue.csv")]
+the_files.PDF_FILES = [os.path.join(the_folders.DIR_PDF_CSV_FILES, "InformedeSituacion2022.pdf")]
 
 ## CONSTANTS
 
