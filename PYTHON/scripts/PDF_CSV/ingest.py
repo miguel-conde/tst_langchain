@@ -71,4 +71,4 @@ if __name__ ==  '__main__':
     index_creator = VectorstoreIndexCreator(vectorstore_kwargs={'persist_directory': gs.the_folders.DIR_PERSIST, 'collection_name': 'pdf_files'})
     index_PDF = index_creator.from_loaders([loader_PDF])
     vectorstore_pdf = index_PDF.vectorstore
-    vectorstore_csv.persist()
+    vectorstore_pdf.persist()
